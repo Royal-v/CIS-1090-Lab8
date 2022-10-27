@@ -1,12 +1,34 @@
 //Remember these? We get references to the elements.
 let game = document.querySelector("#game");
 let chicken = document.querySelector("#chicken");
+let score = document.querySelector("#score");
 
+
+let scores = 0;
 //This function returns a random integer [0...max)
 function random(max){
     return Math.floor(Math.random() * max);
 }
 
+function addscorepig() {
+
+    scores++;
+    scores++;
+    scores++;
+    score.innerText = scores;
+}
+function addscorecow() {
+
+    scores++;
+  
+    score.innerText = scores;
+  }
+
+function addchicken(){
+    scores++;
+    scores++;
+    score.innerText = scores;
+}
 //This function sets the position of the chicken to a random
 //place inside the game div
 function randomizeChicken(){
@@ -22,15 +44,13 @@ function randomizepig(){
     pig.style.left = random(game.offsetWidth - cow.offsetWidth) + "px";
 }
 //Call this function when the player clicks the chicken
-function youWin(){
-    alert("Winner!");
-}
+
 
 //We've seen this before. Call the "youWin" function
 //whenever the user clicks the chicken
-chicken.addEventListener('click', youWin);
-cow.addEventListener('click', youWin);
-pig.addEventListener('click', youWin)
+chicken.addEventListener('click', addchicken);
+cow.addEventListener('click', addscorecow);
+pig.addEventListener('click', addscorepig)
 //A new event lisener! "mouseover" happens when the MOUSE goes
 //OVER the element.
 //
