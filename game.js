@@ -5,16 +5,12 @@ let score = document.querySelector("#score");
 let time = document.querySelector("#time");
 
 let scores = 0;
-let timer = 121;
+let timer = 120;
 //This function returns a random integer [0...max)
 function random(max){
     return Math.floor(Math.random() * max);
 }
-function intro(){
-    if(timer = 120){
-        alert("I call it Farm Yard Fracas. The object of the game is to click on the animals. You have 2 min to win. Happy farming!🚜")
-    }
-}
+
 function checkifyoulose(){
     if(timer > 0){
         timer--;
